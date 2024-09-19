@@ -1,0 +1,412 @@
+@font-face {
+    font-family: 'sms';
+    src: url('../font/SMS.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.menu-containers {
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(28, 45, 76, 0.4);
+    opacity: 1;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    width: 21vw;
+    margin: 1vw;
+    color: aliceblue;
+    overflow-y: auto;
+    animation: fade-in 0.1s ease-in-out;
+    animation: slide-up 0.1s ease-in-out;
+}
+
+.menu-titles {
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'italic';
+    font-weight: 300;
+    font-size: 1.5em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+#menu-container {
+    background-color: rgba(17, 25, 40, 0.2);
+    position: absolute;
+    border: 0.00000001px solid rgba(255, 255, 255, 0.125);
+    border-top: 0px;
+
+    top: 5em;
+    bottom: 2vh;
+    // right: 0.5vw;
+    // left: 0.01vw;
+    height: 90vh;
+    width: 23vw;
+    margin-top: 0;
+    margin-left: 1vw;
+    border-radius: 0px 0px 6px 6px;
+}
+
+#menu-title {
+    cursor: ew-resize;
+    position: absolute;
+    display: flex;
+    height: 3em;
+    width: 23vw;
+    top: 2em;
+    // right: 0.5vw;
+    // left: 0.01vw;
+    margin-left: 1vw;
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(48, 17, 248, 0.261);
+    border-radius: 6px 6px 0px 0px;
+    color: aliceblue;
+}
+
+#menu-titleText {
+    padding: 0;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 1.7em;
+    font-family: 'sms';
+}
+
+#menu-titleLogo {
+    margin: 0.15em;
+    height: 2.7em;
+    width: 2.7em;
+    background-size: cover;
+    background-image: url("../public/favicon.ico");
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#menu-table {
+    width: 100%;
+    border-spacing: 0;
+    position: relative;
+}
+
+#menu-tableSave {
+    padding: 2px 4px !important;
+    margin: 12px !important;
+    width: 11rem !important;
+    display: block;
+    cursor: pointer;
+}
+
+#menu-table th,
+#menu-table td,
+.menu-tableP {
+    padding: 12px;
+    text-align: left;
+    position: relative;
+    width: 11em;
+    margin-top: 20px;
+}
+
+#menu-table th:after {
+    height: 0px;
+    margin-top: 10px;
+}
+
+#menu-table tr {
+    position: relative;
+    margin-top: 10px;
+}
+
+#menu-table tr:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, #00000000, #ffffff, #00000000);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#menu-table tbody tr:hover {
+    background-color: transparent;
+}
+
+#menu-table input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    background: linear-gradient(to right, #00000000, #ffffff, #00000000);
+    background-size: 200% 1px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    color: white;
+    cursor: text;
+}
+
+.menu-inputTextarea {
+    border: 0;
+    padding: 8px;
+    border-radius: 6px;
+    color: white;
+    background-color: #00000000;
+    transition: box-shadow 0.3s ease;
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.05);
+    width: 11.5em;
+    margin-top: 10px;
+}
+
+.menu-inputTextarea:focus {
+    border: 0;
+    outline: none;
+    box-shadow: 0 0 10px rgba(155, 155, 155, 0.5);
+}
+
+
+.menu-tableP svg {
+    cursor: pointer;
+}
+
+
+
+
+
+.menu-inputImage {
+    position: relative;
+    display: flex;
+}
+
+.menu-inputImage span {
+    height: 3em;
+    // width: 11em;
+    cursor: pointer;
+    border-radius: 6px;
+
+    transition: box-shadow 0.3s ease;
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.05);
+    box-shadow: 0 0 2px rgba(155, 155, 155, 0.5);
+
+    padding: 0.7em 1em;
+    transition: box-shadow 0.3s ease;
+}
+
+.menu-inputImage img {
+    margin-right: 1vw;
+    height: 3em;
+    border-radius: 6px;
+    background-size: cover;
+}
+
+.menu-inputImage input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+.menu-inputImage input[type=file]:focus+span {
+    box-shadow: 0 0 10px rgba(155, 155, 155, 0.5);
+}
+
+.react-calendar {
+    position: relative;
+    transform: translate3d(0px, 0px, 0px);
+    background-color: rgba(17, 25, 40, 0);
+    width: 20rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.react-calendar__tile {
+    color: #fff;
+    width: 0.7rem;
+    padding: 5px 3px;
+    line-height: 1.2rem;
+}
+
+.react-calendar__tile:hover {
+    background-color: #666;
+}
+
+.react-calendar__tile--active {
+    background-color: #222;
+}
+
+.react-calendar__tile--now {
+    font-weight: bold;
+}
+
+.react-calendar__navigation {
+    transform: scale(0.7);
+    margin: 0px -0.3em;
+    border: none;
+}
+
+.react-calendar__month-view__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.react-calendar__month-view__days__day--weekend {
+    color: #ff4500;
+}
+
+.react-calendar__navigation__label,
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__prev-button,
+.react-calendar__navigation__next-button,
+.react-calendar__navigation__next2-button {
+    color: #fff;
+}
+
+.react-calendar__navigation__label:hover,
+.react-calendar__navigation__prev2-button:hover,
+.react-calendar__navigation__prev-button:hover,
+.react-calendar__navigation__next-button:hover,
+.react-calendar__navigation__next2-button:hover {
+    background-color: rgba(17, 25, 40, 0.15);
+}
+
+.react-calendar__navigation__label--selecting-range,
+.react-calendar__navigation__prev2-button--selecting-range,
+.react-calendar__navigation__prev-button--selecting-range,
+.react-calendar__navigation__next-button--selecting-range,
+.react-calendar__navigation__next2-button--selecting-range {
+    background-color: rgba(17, 25, 40, 0.15);
+}
+
+/* Измените стили для других частей календаря по вашему усмотрению */
+
+
+
+
+.react-colorful {
+
+    width: 10em !important;
+    height: 10em !important;
+}
+
+.react-colorful__pointer {
+    z-index: 1 !important;
+}
+
+
+
+
+
+
+#menu-table input:focus {
+    animation: gradientAnimation 10s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 200% 100%;
+    }
+
+    50.001% {
+        background-position: -100% 100%;
+    }
+
+    100% {
+        background-position: 50% 100%;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+/* Общие стили для выбора из каталога */
+#menu-table tbody tr td select,
+#menu-tableSave,
+.menu-tableP {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    padding: 2px 4px;
+    font-size: 16px;
+    border: 0px solid #cccccc40;
+    border-radius: 6px;
+    background-color: #0000002f;
+    color: aliceblue;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+
+.menu-tableP {
+    margin: 0;
+}
+
+#menu-table tbody tr td select:hover {
+    border-color: #aaa;
+}
+
+#menu-instBlock {
+    height: 5vh;
+    width: 19vw;
+    display: flex;
+    padding: 1vh;
+    justify-content: center;
+    margin-top: 0;
+    background-color: #00000000;
+}
+
+.menu-instIcon {
+    font-size: 2.5vh;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#arrowinst {
+    color: pink;
+}
+
+#colorpickerbutton {
+    margin-top: 5px;
+    cursor: pointer;
+}

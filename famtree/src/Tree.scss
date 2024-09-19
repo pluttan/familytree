@@ -1,0 +1,110 @@
+body {
+    background: #1f3f3f;
+    background-image: url('https://wp-s.ru/wallpapers/11/7/402346561537353/amfilada-iz-moguchix-nizkix-derevev-s-moshhnymi-mshistymi-vetvyami.jpg');
+}
+
+.node {
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    background: #1f3f3f;
+    background-image: url('https://wp-s.ru/wallpapers/11/7/402346561537353/amfilada-iz-moguchix-nizkix-derevev-s-moshhnymi-mshistymi-vetvyami.jpg');
+    // background-image: url('https://heaps.top/uploads/posts/2022-01/1641902415_2-damion-club-p-anime-fon-tyanki-2.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.node rect,
+.node image {
+    // fill: #fff !important;
+    // stroke: white;
+    stroke-width: 0;
+    width: 2.5em;
+    height: 2.5em;
+    background-size: cover;
+
+}
+
+.node .allrect {
+    stroke-width: 1.2px;
+    width: 5.6em;
+    height: 4.5em;
+}
+
+.node text {
+    font-size: 0.74em;
+    font-family: sans-serif;
+    fill: white;
+    letter-spacing: .1em;
+}
+
+
+
+.link {
+    fill: none;
+    stroke: #bc98ff;
+    stroke-width: 3px;
+}
+
+.templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+}
+
+.ghostCircle.show {
+    display: block;
+}
+
+.ghostCircle,
+.activeDrag .ghostCircle {
+    display: none;
+}
+
+.nodeCircle {
+    border-radius: 10px;
+}
+
+.ghostCircle {
+    display: none;
+}
+
+.rectChecked {
+    stroke: url(#animatedGradient);
+    /* Используем градиент как цвет границы */
+    // stroke-width: 10;
+    /* Толщина границы */
+    // fill: none;
+    /* Нет заливки внутри объекта */
+    animation: colorAnimation 2s infinite alternate ease-in-out;
+}
+
+/* Градиентное определение */
+#animatedGradient {
+
+    /* Первый цвет градиента */
+    stop:nth-child(1) {
+        stop-color: #ff7e5f;
+    }
+
+    /* Второй цвет градиента */
+    stop:nth-child(2) {
+        stop-color: #feb47b;
+    }
+
+    /* Анимация цветов градиента */
+    stop {
+        stop-color: #ff7e5f;
+        /* Длительность анимации и тип (в данном случае, плавное изменение) */
+        animation: colorAnimation 2s infinite alternate ease-in-out;
+    }
+}
+
+/* Анимация цветов градиента */
+@keyframes colorAnimation {
+    to {
+        stop-color: #feb47b;
+    }
+}

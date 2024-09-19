@@ -1,0 +1,142 @@
+.blackbox {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    background-color: rgba(17, 25, 40, 0.3);
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.registration-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(50vw - 21em/2), calc(50vh - 34em/2));
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(28, 45, 76, 0.4);
+    opacity: 1;
+    z-index: 10000;
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    width: 21em;
+    min-height: 27em;
+    margin: 1vw;
+    color: aliceblue;
+    overflow-y: auto;
+}
+
+.error-message {
+    font-size: 0.8em;
+    color: #ff0000
+}
+
+.enter-contain {
+    width: 21em;
+    min-height: 21em;
+}
+
+#registration-title {
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'sms';
+    font-weight: 300;
+    font-size: 1.5em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: move;
+    position: relative;
+}
+
+#registration-title select {
+    position: absolute;
+    right: 1vw;
+    margin-left: 3vw;
+    font-family: 'ariel';
+    max-width: 7vw;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    padding: 2px 4px;
+    font-size: 16px;
+    border: 0px solid #cccccc40;
+    border-radius: 6px;
+    background-color: #0000002f;
+    color: aliceblue;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.registration-form {
+    padding: 20px;
+}
+
+.registration-label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.registration-input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #00000000, #ffffff, #00000000);
+    background-size: 200% 1px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.registration-input:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(155, 155, 155, 0.5);
+}
+
+.registration-buttons {
+    display: flex;
+
+}
+
+.registration-button {
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 3em;
+
+    transition: box-shadow 0.3s ease;
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.05);
+    box-shadow: 0 0 2px rgba(155, 155, 155, 0.5);
+
+    padding: 0.7em 1em;
+    margin: 0.3em;
+    transition: box-shadow 0.3s ease;
+}
+
+.registration-button:hover {
+    box-shadow: 0 0 2px rgba(155, 155, 155, 0.95);
+}

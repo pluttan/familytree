@@ -1,0 +1,31 @@
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(test.jpg);
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 20%;
+  height: 40vh;
+  border: 0;
+  backdrop-filter: blur(10px) !important;
+  margin: 20vh 20vw;
+  position: absolute;
+  box-shadow: 0 0 50px #555;
+  border-radius: 20px;
+}
+.card-img {
+  width: 5vw;
+  height: 5vw;
+  /* margin: 0 auto; */
+  margin-top: -2vw;
+  margin-left: 1vw;
+  border-radius: 100%;
+  background-size: contain;
+}
+#men {
+  background-image: url(men.jpg);
+}

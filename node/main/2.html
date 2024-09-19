@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortableJS Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .sortable-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+        }
+
+        .sortable-list li {
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            cursor: grab;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Sortable List 1</h2>
+    <ul id="sortable-list-1" class="sortable-list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <h2>Sortable List 2</h2>
+    <ul id="sortable-list-2" class="sortable-list">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+    </ul>
+
+    <h2>Sortable List 3 (Copy)</h2>
+    <ul id="sortable-list-3" class="sortable-list">
+        <li>+</li>
+    </ul>
+
+    <script>
+        // Initialize SortableJS for both lists with the same group
+        const sortable1 = new Sortable(document.getElementById('sortable-list-1'), {
+            group: 'shared',
+            animation: 150, // Animation duration in milliseconds
+        });
+
+        const sortable2 = new Sortable(document.getElementById('sortable-list-2'), {
+            group: 'shared',
+            animation: 150, // Animation duration in milliseconds
+        });
+
+        const sortable3 = new Sortable(document.getElementById('sortable-list-3'), {
+            group: {
+                name: 'shared',
+                pull: 'clone', // Enable cloning items
+                put: false,    // Do not allow putting items in this list
+            },
+            sort: false, // Disable sorting within this list
+            animation: 150, // Animation duration in milliseconds
+            onClone: function (evt) {
+                // Triggered when an item is cloned
+                console.log('Item cloned:', evt.clone);
+            },
+        });
+    </script>
+</body>
+
+</html>

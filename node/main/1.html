@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color: aliceblue;
+            font-size: calc((1vw + 1vh + .5vmin)/2);
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url("img/background5.jpg");
+        }
+
+        .noise {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.05;
+            opacity: 0;
+        }
+
+        nav {
+            z-index: 2;
+            background-color: rgba(50, 50, 50, 0.9);
+            height: 6vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navitem {
+            background-color: rgba(50, 50, 50, 1);
+            height: 4vh;
+            max-width: 10vw;
+            min-width: 5vw;
+            margin: 1vh 3vw;
+            font-family: 'Shantell Sans', cursive;
+            border-radius: 10px;
+        }
+
+        .navleft {
+            align-self: flex-end;
+        }
+
+        #icon {
+            height: 5vh;
+            max-width: 5vh;
+            min-width: 5vh;
+            width: 5vh;
+            margin: 0.5vh 0 0.5vh 0.5vh;
+            background-color: rgba(50, 50, 50, 0);
+            background-image: url("favicon.ico");
+            background-size: contain;
+            border-radius: 50%;
+        }
+
+        #siteName {
+            background-color: rgba(50, 50, 50, 0);
+            margin: 1.2vh 3vw 3vw 0.3vw;
+            font-size: 1.6em;
+            text-align: center;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 20%;
+            height: 40vh;
+            border: 0;
+            backdrop-filter: blur(10px) !important;
+            margin: 20vh 20vw;
+            position: absolute;
+            box-shadow: 0 0 50px #555;
+            border-radius: 20px;
+        }
+
+        .card-img {
+            width: 5vw;
+            height: 5vw;
+            /* margin: 0 auto; */
+            margin-top: -2vw;
+            margin-left: 1vw;
+            border-radius: 100%;
+            background-size: contain;
+        }
+
+        #men {
+            background-image: url(img/men.jpg);
+        }
+    </style>
+    <title>Noise Canvas</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navitem" id="icon"></div>
+        <div class="navitem" id="siteName">Family Tree</div>
+        <div class="navitem"></div>
+        <div class="navitem"></div>
+        <div class="navitem"></div>
+        <div class="navitem navleft"></div>
+        <div class="navitem navleft"></div>
+        <div class="navitem navleft"></div>
+    </nav>
+    <canvas id="noise" class="noise"></canvas>
+
+    <div class="card">
+        <div class="card-img" id="men">
+
+        </div>
+    </div>
+
+    <script>
+        const noise = () => {
+            let canvas, ctx;
+            let wWidth, wHeight;
+            let noiseData = [];
+            let frame = 0;
+            let loopTimeout;
+
+            // Create Noise
+            const createNoise = () => {
+                const idata = ctx.createImageData(wWidth, wHeight);
+                const buffer32 = new Uint32Array(idata.data.buffer);
+                const len = buffer32.length;
+                for (let i = 0; i < len; i++) {
+                    if (Math.random() < 0.5) {
+                        buffer32[i] = 0xff000000;
+                    }
+                }
+                noiseData.push(idata);
+            };
+
+            // Play Noise
+            const paintNoise = () => {
+                if (frame === 9) {
+                    frame = 0;
+                } else {
+                    frame++;
+                }
+                ctx.putImageData(noiseData[frame], 0, 0);
+            };
+
+            // Loop
+            const loop = () => {
+                paintNoise(frame);
+                loopTimeout = window.setTimeout(() => {
+                    window.requestAnimationFrame(loop);
+                }, (1000 / 25));
+            };
+
+            // Setup
+            const setup = () => {
+                wWidth = window.innerWidth;
+                wHeight = window.innerHeight;
+                canvas.width = wWidth;
+                canvas.height = wHeight;
+                for (let i = 0; i < 10; i++) {
+                    createNoise();
+                }
+                loop();
+            };
+
+            // Reset
+            let resizeThrottle;
+            const reset = () => {
+                window.addEventListener('resize', () => {
+                    window.clearTimeout(resizeThrottle);
+                    resizeThrottle = window.setTimeout(() => {
+                        window.clearTimeout(loopTimeout);
+                        setup();
+                    }, 200);
+                }, false);
+            };
+
+            // Init
+            const init = (() => {
+                canvas = document.getElementById('noise');
+                ctx = canvas.getContext('2d');
+                setup();
+                reset();
+            })();
+        };
+
+        noise();
+    </script>
+</body>
+
+</html>
