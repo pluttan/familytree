@@ -4,11 +4,6 @@
 
 **Интерактивный конструктор семейного дерева с визуализацией на D3.js**
 
-[![License](https://img.shields.io/badge/license-GPL--3.0-2C2C2C?style=for-the-badge&labelColor=1E1E1E)](LICENSE)
-[![React](https://img.shields.io/badge/react-18-2C2C2C?style=for-the-badge&logo=react&labelColor=1E1E1E)]()
-[![D3.js](https://img.shields.io/badge/d3.js-visualization-2C2C2C?style=for-the-badge&logo=d3dotjs&labelColor=1E1E1E)]()
-[![Node.js](https://img.shields.io/badge/node.js-backend-2C2C2C?style=for-the-badge&logo=nodedotjs&labelColor=1E1E1E)]()
-[![PostgreSQL](https://img.shields.io/badge/postgresql-database-2C2C2C?style=for-the-badge&logo=postgresql&labelColor=1E1E1E)]()
 
 </div>
 
@@ -48,4 +43,4 @@
 
 ## ■ Лицензия
 
-MIT © [pluttan](https://github.com/pluttan)
+GPL-3.0 © [pluttan](https://github.com/pluttan)
